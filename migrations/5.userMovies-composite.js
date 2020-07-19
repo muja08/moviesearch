@@ -6,7 +6,7 @@ module.exports = {
       'userMovies',
       ['userId', 'movieId'],
       {
-        indexName: 'userMovies_compositekey',
+        indexName: 'userMovies_compositekey_2',
         indicesType: 'UNIQUE'
       }
     )
@@ -14,7 +14,7 @@ module.exports = {
 
   down: (queryInterface, Sequelize) => {
     return queryInterface.removeIndex(
-      'userMovies_compositekey'
+      'userMovies_compositekey_2'
     );
   }
 };
