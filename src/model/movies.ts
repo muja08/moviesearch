@@ -5,38 +5,38 @@ import { userMovies } from './userMovies';
     timestamps: true,
     paranoid: true,
 })
-export class users extends Model<users> {
+export class movies extends Model<movies> {
     @PrimaryKey
     @Column({
         allowNull: false,
         type: DataType.UUID,
     })
-    public userId: string;
+    public movieId: string;
 
     @Column({
         allowNull: false,
         type: DataType.STRING,
     })
-    public userName: string;
+    public movieName: string;
 
     @Column({
-        defaultValue: null,
+        allowNull: false,
+        type: DataType.JSON,
+      })
+    public castAndCrew: JSON;
+
+    @Column({
+        allowNull: false,
         type: DataType.STRING,
     })
-    public relationship: string;
-
-    @Column({
-        defaultValue: null,
-        type: DataType.INTEGER,
-    })
-    public age: number;
+    public director: string;
 
     @CreatedAt public createdAt: Date;
 
     @UpdatedAt public updatedAt: Date;
 
     @DeletedAt public deletedAt: Date;
-    
+        
     @HasMany(() => userMovies)
     public userMovies: userMovies[];
 }

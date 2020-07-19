@@ -1,7 +1,7 @@
 {
   "name": "typescript-starter",
   "version": "1.0.0",
-  "description": "A basic typescript app starter for newbies in 2019.",
+  "description": "Task from OHM Mobility",
   "main": "index.ts",
   "scripts": {
     "build": "rimraf ./build && tsc",
@@ -17,7 +17,7 @@
     }
   },
   "keywords": [],
-  "author": "",
+  "author": "Mohammed Muzzamil MJ",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^12.12.42",
@@ -35,23 +35,15 @@
     "typescript": "^3.9.3"
   },
   "dependencies": {
-    "@types/bcrypt": "^1.0.0",
     "@types/bluebird": "^3.5.32",
-    "@types/crypto-js": "^3.1.38",
+    "@types/sequelize": "^4.0.74",
     "@types/validator": "^13.0.0",
-    "@types/jsonwebtoken": "^7.2.5",
-    "bcrypt": "^1.0.3",
     "body-parser": "^1.19.0",
-    "jsonwebtoken": "^8.2.0",
     "cors": "^2.8.5",
-    "crypto-js": "^3.1.9-1",
     "express": "^4.17.1",
     "mysql2": "^2.1.0",
-    "reflect-metadata": "^0.1.13",
     "sequelize": "^5.21.11",
     "sequelize-cli": "^5.3.0",
-    "sequelize-typescript": "^1.1.0",
-    "aws-sdk": "^2.437.0",
-    "aws4": "^1.7.0"
+    "sequelize-typescript": "^1.1.0"
   }
 }

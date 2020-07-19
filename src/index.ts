@@ -1,7 +1,6 @@
 import express from 'express';
 import sequelize from './sequelize-connection';
 import bodyParser from 'body-parser';
-import { videocontents } from './model/videocontents';
 
 const app = express();
 const port = 3000;
@@ -22,7 +21,7 @@ app.use((req, res, next) => {
 
 
 
-app.use('/onboard', require('./routes/onboard').router);
+app.use('/movies', require('./routes/movies').router);
 
 
 
@@ -32,55 +31,5 @@ app.listen(port, err => {
   }
   return console.log(`server is listening on ${port}`);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-app.post('/listVideos', (req, res) => {
-  const failedResponse: any = {
-    success: false
-  };
-  const successResponse: any = {
-    success: true,
-  };
-  try {
-    
-    videocontents.findAll({
-    }).then((resp: any) => {
-      resp = JSON.parse(JSON.stringify(resp));
-
-      res.send(JSON.stringify(resp));
-
-
-    }).catch((error: any) => {
-      console.log('error', error)
-      failedResponse.message = 'User Creation Failed!!';
-      res.send(JSON.stringify(failedResponse));
-    })
-
-
-  } catch (errored) {
-    res.send(JSON.stringify(failedResponse));
-  }
-});
-
-
-
-
-
 
 sequelize.sync().then();

@@ -2,42 +2,26 @@
 
 module.exports = {
     up: (queryInterface, Sequelize) => {
-        return queryInterface.createTable('videocontents', {
+        return queryInterface.createTable('users', {
 
-            contentId: {
+            userId: {
                 type: Sequelize.UUID,
                 primaryKey: true,
                 allowNull: false,
             },
-            thumbnailLink: {
+            userName: {
+                type: Sequelize.STRING,
+                allowNull: false,
+            },
+            relationship: {
                 type: Sequelize.STRING,
                 defaultValue: null,
                 allowNull: true,
             },
-            link: {
-                type: Sequelize.STRING,
-                defaultValue: null,
+            age: {
                 allowNull: true,
-            },
-            title: {
-                type: Sequelize.STRING,
-                allowNull: false,
-            },
-            views: {
                 type: Sequelize.INTEGER,
-                unique: false,
-                allowNull: false,
-                defaultValue: 0
-            },
-            type: {
-                type: Sequelize.ENUM('movies', 'tvseries', 'netflix', 'youtube', 'prime'),
-                allowNull: false
-            },
-            duration: {
-                type: Sequelize.INTEGER,
-                unique: false,
-                allowNull: false,
-                defaultValue: 0
+                defaultValue: null
             },
             createdAt: {
                 defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
@@ -57,6 +41,6 @@ module.exports = {
     },
 
     down: (queryInterface, Sequelize) => {
-        return queryInterface.dropTable('videocontents');
+        return queryInterface.dropTable('users');
     }
 };

@@ -2,40 +2,32 @@
 
 module.exports = {
     up: (queryInterface, Sequelize) => {
-        return queryInterface.createTable('users', {
+        return queryInterface.createTable('userMovies', {
 
-            userId: {
+            id: {
                 type: Sequelize.UUID,
                 primaryKey: true,
                 allowNull: false,
             },
-            email: {
-                type: Sequelize.STRING,
-                unique: true,
+            userId: {
+                type: Sequelize.UUID,
                 allowNull: false,
+                references: {
+                    model: "users",
+                    key: "userId",
+                },
             },
-            userName: {
-                type: Sequelize.STRING,
-                unique: true,
+            movieId: {
+                type: Sequelize.UUID,
                 allowNull: false,
+                references: {
+                    model: "movies",
+                    key: "movieId",
+                },
             },
-            name: {
-                type: Sequelize.STRING,
-                defaultValue: null,
-                allowNull: true,
-            },
-            hashPassword: {
-                type: Sequelize.STRING,
+            preference: {
                 allowNull: false,
-            },
-            salt: {
-                type: Sequelize.STRING,
-                allowNull: false,
-            },
-            profile_pic: {
-                type: Sequelize.STRING,
-                defaultValue: null,
-                allowNull: true,
+                type: Sequelize.INTEGER,
             },
             createdAt: {
                 defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
@@ -55,6 +47,6 @@ module.exports = {
     },
 
     down: (queryInterface, Sequelize) => {
-        return queryInterface.dropTable('users');
+        return queryInterface.dropTable('userMovies');
     }
 };

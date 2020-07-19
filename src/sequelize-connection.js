@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize-typescript';
 
 const sequelize = new Sequelize({
-    database: 'basehub',
+    database: 'moviestore',
     dialect: 'mysql',
     replication: {
         read: {
