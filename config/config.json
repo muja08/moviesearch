@@ -1,7 +1,7 @@
 {
     "development": {
       "username": "root",
-      "password": "muja@examly",
+      "password": "test",
       "database": "moviestore",
       "host": "localhost",
       "dialect": "mysql"

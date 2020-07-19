@@ -12,7 +12,7 @@ const sequelize = new Sequelize({
         }
     },
     username: 'root',
-    password: 'muja@examly',
+    password: 'test',
     modelPaths: [__dirname + '/model'],
     pool: {
         max: 200,
