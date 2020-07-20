@@ -34,10 +34,6 @@ export class userMovies extends Model<userMovies> {
     })
     public preference: number;
 
-    @CreatedAt public createdAt: Date;
-
-    @UpdatedAt public updatedAt: Date;
-
     @DeletedAt public deletedAt: Date;
     
     @BelongsTo(() => users, { targetKey: 'userId' })

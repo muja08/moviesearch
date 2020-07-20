@@ -1,5 +1,5 @@
 import { Model, PrimaryKey, DataType, Table, Column, HasMany } from 'sequelize-typescript';
-import { DeletedAt, CreatedAt, UpdatedAt } from 'sequelize-typescript';
+import { DeletedAt } from 'sequelize-typescript';
 import { userMovies } from './userMovies';
 @Table({
     timestamps: true,
@@ -30,10 +30,6 @@ export class movies extends Model<movies> {
         type: DataType.STRING,
     })
     public director: string;
-
-    @CreatedAt public createdAt: Date;
-
-    @UpdatedAt public updatedAt: Date;
 
     @DeletedAt public deletedAt: Date;
         
